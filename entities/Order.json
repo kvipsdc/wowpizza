@@ -1,0 +1,89 @@
+{
+  "name": "Order",
+  "type": "object",
+  "properties": {
+    "items": {
+      "type": "array",
+      "description": "Cart items in the order",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "price": {
+            "type": "number"
+          },
+          "quantity": {
+            "type": "number"
+          },
+          "isOfferPizza": {
+            "type": "boolean"
+          },
+          "customizations": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    "subtotal": {
+      "type": "number"
+    },
+    "discount": {
+      "type": "number"
+    },
+    "discount_type": {
+      "type": "string"
+    },
+    "total": {
+      "type": "number"
+    },
+    "order_type": {
+      "type": "string",
+      "enum": [
+        "delivery",
+        "takeaway"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "confirmed",
+        "preparing",
+        "ready",
+        "delivered",
+        "cancelled"
+      ],
+      "default": "pending"
+    },
+    "device_id": {
+      "type": "string",
+      "description": "Device fingerprint for offer tracking"
+    },
+    "used_offer_pizza": {
+      "type": "boolean",
+      "default": false
+    },
+    "customer_name": {
+      "type": "string"
+    },
+    "customer_phone": {
+      "type": "string"
+    },
+    "delivery_address": {
+      "type": "string"
+    },
+    "promo_code": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "items",
+    "total",
+    "order_type"
+  ]
+}

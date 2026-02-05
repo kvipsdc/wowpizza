@@ -1,0 +1,25 @@
+{
+    "name": "UserProfile",
+    "type": "object",
+    "properties": {
+        "order_count": {
+            "type": "number",
+            "default": 0,
+            "description": "Number of completed orders for discount calculation"
+        },
+        "phone": {
+            "type": "string"
+        },
+        "default_address": {
+            "type": "string"
+        },
+        "device_ids": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "description": "List of device fingerprints associated with this user"
+        }
+    },
+    "required": []
+}
